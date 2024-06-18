@@ -39,7 +39,7 @@ app.post("/", function(req, res){
     const url = "https://us17.api.mailchimp.com/3.0/lists/49a987adb9";
     const options = {
         method : "POST",
-        auth: "TonyYung:3a4b2f8d0a90852e25354da8f97da3f15-us17"
+        auth: "TonyYung:34b2f8d0a90852e25354da8f97da3f15-us17"
     }
     const request = https.request(url,  options, function(response){
 
@@ -62,7 +62,7 @@ app.post("/", function(req, res){
 
 });
 
-app.post("/failure", function(res,req){
+app.post("/failure", function(req,res){
     res.redirect("/");
 });
 // 49a987adb9 list ID
