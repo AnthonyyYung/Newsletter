@@ -1,0 +1,23 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 0  20px 20px ;
+    background-color: rgb(196, 193, 193);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    border:  2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+a:hover{
+    background-color: black;
+    color: white;
+    border:   2px solid rgb(78, 76, 76); 
+    border-radius: 5px;
+}
