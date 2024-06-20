@@ -4,11 +4,13 @@ const request = require("request")
 const app = express();
 const https  = require("https");
 const { subscribe } = require("diagnostics_channel");
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true})); 
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log("listening");
 });
 
@@ -38,8 +40,8 @@ app.post("/", function(req, res){
     const jsonData = JSON.stringify(data);
     const url = "https://us17.api.mailchimp.com/3.0/lists/49a987adb9";
     const options = {
-        method : "POST",
-        auth: "TonyYung:34b2f8d0a90852e25354da8f97da3f15-us17"
+        method: "POST",
+        auth: "Tonyyung:" + apiKey
     }
     const request = https.request(url,  options, function(response){
 
@@ -51,9 +53,9 @@ app.post("/", function(req, res){
         res.sendFile(__dirname + "/failure.html");
        }
        
-        response.on("data", function(data){
-            console.log(JSON.parse(data));
-        })
+        // response.on("data", function(data){
+        //     console.log(JSON.parse(data));
+        // })
 
     });
 
